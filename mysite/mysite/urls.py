@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include, url
+from catalog.views import hello_world,singers_show,songs_show
 
 urlpatterns = [
+    url(r'^$', singers_show),
     path('admin/', admin.site.urls),
+    path('hello/<name>', hello_world),
+    url(r'^singers/$',singers_show),
+    path('songs/<singer>',songs_show),
+    url(r'^songs/$',songs_show),
 ]
+
