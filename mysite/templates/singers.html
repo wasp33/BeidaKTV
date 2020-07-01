@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<title>Singers</title>
+    <link href="//fonts.googleapis.com/css?family=Lemon" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<meta name="generator" content="Geany 1.33" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'mystyle.css' %}">
+</head>
+
+<body>
+  <div class="jumbotron text-center button">
+        <a class="btn btn-success btn-block btn-sm" href="/"><h1 class="site-title text-center"> Beida KTV</h1></a>
+    </div>
+   <div class="container">
+   
+      <cation>歌手 姓名</cation>
+     
+   <div class="row"></div>
+   {% for singer in singer_list %}
+      <div>
+       <!-- <h3 class="site-title"><a href="/songs/{{ singer.name }}"> {{ singer.name }}</a></h3> -->
+       <a class="btn btn-success btn-block" href="/songs/{{ singer.name }}"> <h3> {{ singer.name }}</h3> </a>
+      </div>
+   {% endfor %}
+   </div>
+   </div>
+
+
+</body>
+
+</html>
